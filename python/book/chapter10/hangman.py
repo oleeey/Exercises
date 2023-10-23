@@ -1,3 +1,5 @@
+import random
+
 def hangman(word):
     wrong = 0
     stages = ["",
@@ -10,13 +12,13 @@ def hangman(word):
               "|            "
               ]
     rletters = list(word)
-    board = ["_" * len(word)]
+    board = ["_"] * len(word)
     win = False
     print("Welcome to Hangman")
 
     while wrong < len(stages) - 1:
         print("\n")
-        msg = "Guess a letter"
+        msg = "Guess a letter "
         char = input(msg)
         if char in rletters:
             cind = rletters.index(char)
@@ -32,5 +34,12 @@ def hangman(word):
             print(" ".join(board))
             win = True
             break
+    if not win:
+        print("\n".join(stages[0: wrong]))
+        print("You lose! It was {}".format(word))
+
+words = ["cat", "giraffe", "car", "defense", "alligator"]
+index = random.randrange(len(words))
+hangman(words[index])
 
 
