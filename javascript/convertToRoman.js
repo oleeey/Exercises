@@ -14,11 +14,7 @@ function convertToRoman(num) {
           output += roman[i][1];
           num -= roman[i][0];
         }
-        else if (num == 1) {
-          output += "I";
-          num = 0;
-        }
-        else if (num / 1000 > 1) {
+        else if (num > 1000) {
           output += "M";
           num -= 1000
         }
@@ -28,4 +24,4 @@ function convertToRoman(num) {
     return output;
   }
   
-  console.log(convertToRoman(9999));
+  console.log(convertToRoman(2111));
