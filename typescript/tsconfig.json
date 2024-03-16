@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "lib": ["dom", "es2017"],   
+    },
+    "typeAcquisition": {
+        "enable": true
+}
+}
